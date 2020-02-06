@@ -1,2 +1,9 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+ <header class="page-header">
+    <h1> Admin Dashboard </h1>
+  </header>
+
+  <div >
+   <h2>Product Inventory</h2>
+   <li>Total Number of Products <%= @products.map{|product| product.quantity}.sum%></li>
+   <li>Total Number of Categories <%= @categories.count%></li>
+  </div>
