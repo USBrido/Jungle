@@ -17,7 +17,8 @@ Rails.application.routes.draw do
 
     #needs to be worked on
     resources :sessions, only: [:new, :create]  
-    get '/sessions' => 'sessions#destroy'
+    get '/sessions/delete' => 'sessions#destroy'
+    
     resources :users, only: [:new, :create]
 
     # get '/signup' => 'users#new'
@@ -28,7 +29,7 @@ Rails.application.routes.draw do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
     resources :categories, except: [:add, :delete]
-
+    resources :sales, only: [:index, :new]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
