@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  def self.authenticte_with_credentials(email, password)
+  def self.authenticate_with_credentials(email, password)
     email
     user = User.find_by_email(email)
     user ? user.authenticate(password)? user : nil : nil
